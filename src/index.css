@@ -1,13 +1,136 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Quicksand";
+  color: #333;
+}
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: rgb(229, 207, 69);
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #e5cf45;
+}
+.content {
+  margin: 40px auto;
+  padding: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.orders{
+  padding: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: #e5cf45 solid;
+  margin-top: 1rem;
+}
+
+td, th {
+  border: 1px solid #e5cf45;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #e5cf45;
+}
+
+button{
+  margin-top: 1rem;
+  border-radius: 1rem;
+  padding: .5rem;
+}
+
+button:hover{
+  color: #e5cf45;
+}
+
+
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #e5cf45;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  background: #e5cf45;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+}
+.home h2{
+  flex-basis: 100%;
+  margin: 1rem;
+  text-align: center;
+}
+
+.post {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  flex: 1;
+  max-width: 300px; 
+  
+}
+
+.post a{
+  text-decoration: none;
+}
+
+.post:hover {
+  box-shadow: 0 8px 16px 0 rgb(229, 207, 69);
+}
+
+.post img {
+  margin: 1rem;
+  border-radius: 5px 5px 0 0;
+  width: 80%;
 }

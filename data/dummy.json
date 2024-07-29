@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ken",
+      "email": "abc@abc.com",
+      "username": "ken_hahaha",
+      "active": true,
+      "password" : "88888"
+    }
+  ],
+  "post": [
+    {
+      "id": "1",
+      "title": "Looking for one roommate in Nepean",
+      "body": "All inclusive with only $700 per month.",
+      "houseType": "townhouse",
+      "price": 700,
+       "imageUrl": "http://localhost:3000/images/room_1.jpg"
+    },
+    {
+      "id": "b49c",
+      "title": "new condo  for students",
+      "body": "condo for students near Algonquin College, all-inclusive.",
+      "houseType": "Condo",
+      "price": 880,
+       "imageUrl": "http://localhost:3000/images/room_2.jpg"
+    },
+    {
+      "id": "50e4",
+      "title": "Basement for young couples",
+      "body": "New basement with independent exits for couples near Blair. ",
+      "houseType": "House",
+      "price": 1200,
+       "imageUrl": "http://localhost:3000/images/room_3.jpg"
+    }
+  ]
+}
