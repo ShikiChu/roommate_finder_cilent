@@ -18,10 +18,12 @@ const Home = () => {
             {posts && posts.map((post) => (
                 <div key={post.id} className="post">
                     <Link to = {`/posts/${post.id}`}>
-                        <h3>Title: {post.title}</h3>
+                        <h3>{post.title}</h3>
                         <p>{post.body}</p>
                         <img src={post.imageUrl} alt="room_img" ></img>
                         <p>Type: {post.houseType}</p>
+                        <p>Area:{post.area}</p>
+                        <p>City:{post.city}</p>
                         <small>Rent: {post.price}</small>
                     </Link>
                 </div>

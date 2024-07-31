@@ -27,7 +27,7 @@ const CreatePost = () => {
                 ()=>{
                     console.log("Post Added.")
                     setLoading(false);
-                    redirect('/')
+                    redirect('/');
                 }
             )
         },1000)

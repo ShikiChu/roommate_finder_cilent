@@ -2,11 +2,17 @@
   "users": [
     {
       "id": "1",
-      "name": "Ken",
       "email": "abc@abc.com",
       "username": "ken_hahaha",
       "active": true,
-      "password" : "88888"
+      "password": "88888"
+    },
+    {
+      "id": "269a",
+      "email": "sandy@testing.com",
+      "username": "sandy888",
+      "password": "12345",
+      "active": true
     }
   ],
   "post": [
@@ -16,23 +22,29 @@
       "body": "All inclusive with only $700 per month.",
       "houseType": "townhouse",
       "price": 700,
-       "imageUrl": "http://localhost:3000/images/room_1.jpg"
+      "imageUrl": "http://localhost:3000/images/room_1.jpg",
+      "area": "Nepean",
+      "city": "Ottawa"
     },
     {
       "id": "b49c",
       "title": "new condo  for students",
-      "body": "condo for students near Algonquin College, all-inclusive.",
+      "body": "condo for students near Humber College, all-inclusive.",
       "houseType": "Condo",
       "price": 880,
-       "imageUrl": "http://localhost:3000/images/room_2.jpg"
+      "imageUrl": "http://localhost:3000/images/room_2.jpg",
+      "area": "North Yori",
+      "city": "Toronto"
     },
     {
       "id": "50e4",
       "title": "Basement for young couples",
-      "body": "New basement with independent exits for couples near Blair. ",
+      "body": "New basement with independent exits for couples near SAITS. ",
       "houseType": "House",
       "price": 1200,
-       "imageUrl": "http://localhost:3000/images/room_3.jpg"
+      "imageUrl": "http://localhost:3000/images/room_3.jpg",
+      "area": "Greely West",
+      "city": "Calgary"
     }
   ]
 }
