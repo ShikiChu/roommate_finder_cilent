@@ -23,12 +23,12 @@ const Login = () => {
       if (user) {
         console.log('Login successful');
 
-        // Redirect to another page or perform other actions
-        // for now, redirect to home, later, redirect to user dashboard
-        //need to create a logout
-        // need to give a button for create a new post
-        // only login user can delete and modify posts
-        redirect('/');
+        // Create a session key and store user information
+        const sessionKey = `session_${Date.now()}`;
+        sessionStorage.setItem('sessionKey', sessionKey);
+        sessionStorage.setItem('username', user.username);
+        
+        redirect('/userDashboard');
       } else {
         setErrorMessage('Invalid credentials ');
       }

@@ -6,6 +6,7 @@ import CreatePost from './CreatePost';
 import PostDetail from './PostDetail';
 import Login from './Login';
 import Signup from './Signup';
+import UserDashboard from './UserDashboard';
 
 
 const Navbar = () => {
@@ -19,11 +20,12 @@ const Navbar = () => {
          <Link to="/" >
           Home
          </Link>
-          {/* <a href="#">Home</a> */}
+         <Link to="/userDashboard" >
+          Dashboard
+         </Link>
           <Link to="/Login" >
           Login
          </Link>
-          {/* <a href="#">New Blog</a> */}
           <Link to="/Signup" >
           Sign up
          </Link>
@@ -32,10 +34,11 @@ const Navbar = () => {
         <div className="content">
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/posts/:id' element={<PostDetail/>}></Route>
+            <Route path='/posts/:id' element={<PostDetail/>} />
             <Route path = "/create" element = {<CreatePost/>}/>
             <Route path='/login' element={<Login/>} />
             <Route path='/signup' element={<Signup/>} />
+            <Route path='/userDashboard' element={<UserDashboard/>} />
             {/* for page not found */}
             <Route path='*' element={<NotFound/>}/>
           </Routes>
