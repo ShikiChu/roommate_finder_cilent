@@ -5,7 +5,9 @@ const Login = () => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+
   const redirect = useNavigate();
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,12 +24,11 @@ const Login = () => {
 
       if (user) {
         console.log('Login successful');
-
         // Create a session key and store user information
         const sessionKey = `session_${Date.now()}`;
         sessionStorage.setItem('sessionKey', sessionKey);
         sessionStorage.setItem('username', user.username);
-        
+
         redirect('/userDashboard');
       } else {
         setErrorMessage('Invalid credentials ');
@@ -39,33 +40,38 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className="login">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit} className="loginForm">
-        <div className="form-group">
-          <label htmlFor="emailOrUsername">Username or Email</label>
-          <input
-            type="text"
-            id="emailOrUsername"
-            value={emailOrUsername}
-            onChange={(e) => setEmailOrUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {errorMessage && <p className="error">{errorMessage}</p>}
-        <button type="submit">Login</button>
-      </form>
+      <div>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit} className="loginForm">
+          <div className="form-group">
+            <label htmlFor="emailOrUsername">Username or Email</label>
+            <input
+              type="text"
+              id="emailOrUsername"
+              value={emailOrUsername}
+              onChange={(e) => setEmailOrUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          {errorMessage && <p className="error">{errorMessage}</p>}
+          <button type="submit">Login</button>
+        </form>
+      </div>
     </div>
+    </>
+    
   );
 };
 

@@ -3,6 +3,9 @@ import CreatePost from './CreatePost';
 
 const UserDashboard = () => {
   const username = sessionStorage.getItem('username');
+  console.log(`**** in UserDashboard component *********`);
+  console.log(`username = ${username}!`);
+  console.log(`sessionStorage = ${sessionStorage}!`);
 
   return (
     <div className="UserDashboard">
