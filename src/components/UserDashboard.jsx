@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import CreatePost from './CreatePost';
+import MyPosts from "./MyPosts";
 
 const UserDashboard = () => {
   const username = sessionStorage.getItem('username');
@@ -13,9 +14,10 @@ const UserDashboard = () => {
       <div className="actions">
         <Link to="/create">Create post</Link>
         <Routes>
-          <Route path="/create" element={<CreatePost />} />
+          {/* <Route path="/create" element={<CreatePost />} /> */}
         </Routes>
       </div>
+      <MyPosts></MyPosts>
     </div>
   );
 };

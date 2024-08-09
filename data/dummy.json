@@ -45,6 +45,13 @@
       "imageUrl": "http://localhost:3000/images/room_3.jpg",
       "area": "Greely West",
       "city": "Calgary"
+    },
+    {
+      "id": "8fa1",
+      "title": "ABC Apartment",
+      "body": "2 bedrooms and 2 bathrooms",
+      "houseType": "Apartment",
+      "price": "2000"
     }
   ]
 }
