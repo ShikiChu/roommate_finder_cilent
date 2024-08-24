@@ -52,6 +52,14 @@
       "body": "2 bedrooms and 2 bathrooms",
       "houseType": "Apartment",
       "price": "2000"
+    },
+    {
+      "id": "9ea2",
+      "title": "11",
+      "body": "222",
+      "houseType": "Apartment",
+      "price": "1233",
+      "fileData": {}
     }
   ]
 }

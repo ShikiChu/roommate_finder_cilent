@@ -1,36 +1,89 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ImageUpload  from "./ImageUpload";
+
 
 const CreatePost = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [houseType, setHouseType] = useState("");
     const [price, setPrice] = useState();
+    const [files, setFiles] = useState();
+    const [area, setArea] = useState();
+    const [city, setCity] = useState();
+    
     const [loading, setLoading] = useState(false);
+    // status would be one of these
+    // 'initial' | 'uploading' | 'success' | 'fail'
+    const [status, setStatus] = useState('initial');
     const redirect = useNavigate();
 
+    const getInputFiles = (inputFiles) => {
+        setStatus('initial');
+        setFiles(inputFiles)
 
-    const submitHandler = (e) => {
+    }
+
+    // const packFiles = (files)=> {
+    //     const fileData = new FormData();
+    //     [...files].forEach((file, i) => {
+    //         fileData.append(`file-${i}`, file, file.name)
+    //     })
+    //     return fileData
+    // }
+
+
+    // const submitHandler = (e) => {
+    const submitHandler = async(e) => {
         // prevent the page reload when the submit button is clicked.
+        let post = { title, body, houseType, price };
+        if(files){
+            setStatus('uploading');
+            console.log(files);
+            const fileData = new FormData();
+            [...files].forEach((file, i) => {
+                fileData.append(`file-${i}`, file, file.name)
+            })
+            post = { title, body, houseType, price, fileData };
+
+        }
+
         e.preventDefault();
-        const post = { title, body, houseType, price };
 
         setLoading(true);
         console.log(loading);
 
-        setTimeout(()=>{
-            fetch("http://localhost:8080/post",{
-                method: "POST",
-                headers: { "Content-Type": "application/json"},
-                body: JSON.stringify(post)
-            }).then(
-                ()=>{
-                    console.log("Post Added.")
-                    setLoading(false);
-                    redirect('/');
-                }
-            )
-        },1000)
+        // !!!! ************************************
+        // !!!! need to be fixed for file uploading
+        // !!!! ************************************
+        try {
+            const result = await fetch('http://localhost:8080/post', {
+              method: 'POST',
+              body: post,
+            });
+    
+            const data = await result.json();
+    
+            console.log(data);
+            setStatus('success');
+          } catch (error) {
+            console.error(error);
+            setStatus('fail');
+          }
+
+        // setTimeout(()=>{
+        //     fetch("http://localhost:8080/post",{
+        //         method: "POST",
+        //         headers: { "Content-Type": "application/json"},
+        //         body: JSON.stringify(post)
+        //     }).then(
+        //         ()=>{
+        //             console.log("Post Added.")
+        //             setLoading(false);
+        //             redirect('/');
+        //         }
+        //     )
+        // },1000)
     }
 
     return (
@@ -69,6 +122,24 @@ const CreatePost = () => {
                     <option value="House">House</option>
                     <option value="Townhouse">Townhouse</option>
                 </select>
+                <label htmlFor="area">Area</label>
+                <input
+                    type="text"
+                    value={area}
+                    onChange={(e) => setArea(e.target.value)}
+                    required
+                />
+                <label htmlFor="city">city</label>
+                <input
+                    type="text"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    required
+                />
+                <label htmlFor="photos">Photos</label>
+                <ImageUpload getInputFiles={getInputFiles} />
+
+
                 {loading && <button disabled type="submit">Adding...</button>}
                 {!loading && <button type="submit">Add Post</button>}
             
